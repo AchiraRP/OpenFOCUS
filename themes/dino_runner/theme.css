@@ -1,0 +1,8 @@
+body.theme-dino_runner { background: #0a0a1a; }
+body.theme-dino_runner #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-dino_runner .widget { background: rgba(10,10,26,0.85); border-color: rgba(200,200,200,0.15); }
+body.theme-dino_runner .search-box { background: rgba(10,10,26,0.85); border-color: rgba(200,200,200,0.15); }
+body.theme-dino_runner .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-dino_runner .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-dino_runner .greeting-line, body.theme-dino_runner .heading { color: #e0e0e0; }
+body.theme-dino_runner .icon-btn, body.theme-dino_runner .add-widget-btn, body.theme-dino_runner .mode-pill { color: rgba(200,200,200,0.5); border-color: rgba(200,200,200,0.15); }

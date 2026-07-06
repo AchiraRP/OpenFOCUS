@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Flurry Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background: #443344;
+        color: white;
+        font-family: sans-serif;
+      }
+      main {
+        margin: 0 auto;
+        max-width: 80%;
+      }
+      pre {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        white-space: pre-wrap;
+        max-width: 100%;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery.flurry.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Snow toggle
+        $(".toggle-snow").on("click", function (event) {
+          event.preventDefault();
+
+          try {
+            $("body").flurry("destroy");
+          } catch (err) {
+          } finally {
+            $("body").flurry();
+          }
+        });
+
+        // Custom snow toggle
+        $(".toggle-custom-snow").on("click", function (event) {
+          event.preventDefault();
+
+          try {
+            $("body").flurry("destroy");
+          } catch (err) {
+          } finally {
+            $("body").flurry({
+              character: ["❄", "❅", "❆", "*", "⛄", "🥶", "🎄", "🎅"],
+              height: 240,
+              speed: 1400,
+              wind: 200,
+              windVariance: 220,
+              frequency: 10,
+              large: 40,
+              small: 4,
+            });
+          }
+        });
+
+        // Confetti toggle
+        $(".toggle-confetti").on("click", function (event) {
+          event.preventDefault();
+
+          try {
+            $("body").flurry("destroy");
+          } catch (err) {
+          } finally {
+            $("body").flurry({
+              character: ["~"],
+              color: ["#55476A", "#AE3D63", "#DB3853", "#F45C44", "#F8B646"],
+              speed: 2000,
+              height: 480,
+              frequency: 60,
+              small: 12,
+              large: 50,
+              rotation: 90,
+              rotationVariance: 20,
+              startRotation: 90,
+              wind: 10,
+              windVariance: 100,
+              opacityEasing: "cubic-bezier(1,0,.96,.9)",
+            });
+          }
+        });
+
+        // Custom flake toggle
+        $(".toggle-custom-flake").on("click", function (event) {
+          event.preventDefault();
+
+          try {
+            $("body").flurry("destroy");
+          } catch (err) {
+          } finally {
+            // Load Font Awesome CSS
+            $("head").append(
+              '<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />'
+            );
+
+            // Flurry
+            $("body").flurry({
+              character: [""],
+              height: 640,
+              onFlake: function () {
+                $(this).html("<i class='fa-regular fa-sun'></i>");
+              },
+            });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Flurry Example</h1>
+      <p>Click the buttons below to see examples of Flurry in action.</p>
+      <hr />
+      <p>
+        <button class="toggle-snow">Toggle Snow</button> This uses the default
+        options.
+      </p>
+      <hr />
+      <p>
+        <button class="toggle-custom-snow">Toggle Custom Snow</button> This uses
+        custom options for a more intense snow effect (with snowmen!):
+      </p>
+      <pre>
+$('body').flurry({
+  character: ["❄", "❅", "❆", "*", "⛄", "🥶", "🎄", "🎅"],
+  height: 240,
+  speed: 1400,
+  wind: 200,
+  windVariance: 220,
+  frequency: 10,
+  large: 40,
+  small: 4
+});</pre
+      >
+      <hr />
+      <p>
+        <button class="toggle-confetti">Toggle Confetti</button> This uses
+        custom options to create a "confetti" effect:
+      </p>
+      <pre>
+$('body').flurry({
+  character: ["~"],
+  color: ["#55476A", "#AE3D63", "#DB3853", "#F45C44", "#F8B646"],
+  speed: 2000,
+  height: 480,
+  frequency: 60,
+  small: 12,
+  large: 50,
+  rotation: 90,
+  rotationVariance: 20,
+  startRotation: 90,
+  wind: 10,
+  windVariance: 100,
+  opacityEasing: "cubic-bezier(1,0,.96,.9)"
+});</pre
+      >
+      <hr />
+      <p>
+        <button class="toggle-custom-flake">Toggle Custom Flakes</button> This
+        uses custom options to create custom &ldquo;snowflakes&rdquo; with Font
+        Awesome:
+      </p>
+      <pre>
+// Load Font Awesome from CDN dynamically; probably not needed if you are already using it for other icons on your page
+$('head').append('&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /&gt;');
+
+// Flurry
+$('body').flurry({
+  character: [""],
+  height: 640,
+  onFlake: function () {
+    $(this).html("&lt;i class='fa-regular fa-sun'&gt;&lt;/i&gt;");
+  },
+});</pre
+      >
+    </main>
+  </body>
+</html>

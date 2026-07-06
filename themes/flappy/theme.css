@@ -1,0 +1,8 @@
+body.theme-flappy { background: #0a0a1a; }
+body.theme-flappy #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-flappy .widget { background: rgba(10,10,26,0.85); border-color: rgba(255,200,50,0.2); }
+body.theme-flappy .search-box { background: rgba(10,10,26,0.85); border-color: rgba(255,200,50,0.2); }
+body.theme-flappy .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-flappy .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-flappy .greeting-line, body.theme-flappy .heading { color: #e0e0e0; }
+body.theme-flappy .icon-btn, body.theme-flappy .add-widget-btn, body.theme-flappy .mode-pill { color: rgba(255,200,50,0.7); border-color: rgba(255,200,50,0.2); }

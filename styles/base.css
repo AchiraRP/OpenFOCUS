@@ -1,0 +1,513 @@
+/* Theme tokens and home-screen layout. The :root palette, heading, and
+   search-box styles are carried over UNCHANGED from the original design —
+   the design is the source of truth; do not restyle. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #0D0D0C;
+  --surface: #181816;
+  --surface-raised: #212120;
+  --border: #2C2C2A;
+  --text: #EDEDE8;
+  --text-dim: #9A9A94;
+  --text-faint: #5C5C58;
+
+  /* Grayscale progress/heat scale (0% → 100% brightness). Never colors. */
+  --heat-0: #2C2C2A;
+  --heat-1: #555555;
+  --heat-2: #888888;
+  --heat-3: #C8C8C8;
+  --heat-4: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16vh 24px 60px;
+  min-height: 100vh;
+}
+
+:focus-visible {
+  outline: 2px solid var(--text-dim);
+  outline-offset: 2px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* --- Greeting + heading share one line --- */
+.greeting-heading-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.greeting-line {
+  font-size: 16px;
+  color: var(--text-dim);
+}
+
+/* --- Wordmark-style heading --- */
+.heading {
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+/* --- Search: card with border, no fill accent --- */
+form.search-box {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 22px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  color: var(--text);
+}
+
+input[type="text"]::placeholder {
+  color: var(--text-faint);
+}
+
+.search-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mode-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 13px;
+}
+
+.submit-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* --- Top Right Controls & Icon Buttons --- */
+.top-right-controls {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.icon-btn {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+/* --- Add Widget button (same pill language as the timer controls) --- */
+.add-widget-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.add-widget-btn:hover {
+  color: var(--text);
+  opacity: 0.85;
+}
+
+/* --- Onboarding System --- */
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.onboarding-spotlight {
+  position: absolute;
+  border-radius: 12px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.75);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: auto;
+  /* Traps clicks inside the dark overlay */
+}
+
+.tour-card {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  width: 340px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10000;
+  pointer-events: auto;
+}
+
+.tour-card.welcome-mode {
+  text-align: center;
+}
+
+.tour-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.tour-card.welcome-mode .tour-title {
+  font-size: 32px;
+}
+
+.tour-desc {
+  font-size: 15px;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.tour-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tour-progress {
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.tour-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.tour-btn {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tour-btn:hover {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+.tour-btn.next {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+}
+
+.tour-btn.next:hover {
+  opacity: 0.9;
+}
+
+/* --- Welcome Screen --- */
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 24px;
+}
+
+.welcome-content {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+}
+
+.welcome-title {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.welcome-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.welcome-input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 16px;
+  color: var(--text);
+  font-family: inherit;
+  outline: none;
+  text-align: center;
+}
+
+.welcome-input:focus {
+  border-color: var(--text-dim);
+}
+
+.welcome-btn {
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.welcome-btn:hover {
+  opacity: 0.9;
+}
+
+/* --- Search Mode Switcher & Model Picker --- */
+.search-mode-switcher {
+  display: flex;
+  align-items: center;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+
+.mode-btn {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-btn.mode-btn {
+  padding: 0;
+  border: 1px solid var(--border);
+}
+
+.mode-btn:hover {
+  color: var(--text);
+}
+
+.mode-btn.active {
+  background: var(--text);
+  color: var(--bg);
+  font-weight: 500;
+}
+
+.search-model-picker-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.model-select-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.model-select-btn:hover {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+.model-select-icon {
+  font-size: 14px;
+}
+
+.model-select-arrow {
+  font-size: 10px;
+  margin-left: 4px;
+  opacity: 0.6;
+}
+
+.model-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 240px;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* Firefox */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.model-dropdown::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari/Edge */
+}
+
+.model-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.model-option:hover,
+.model-option.selected {
+  background: var(--surface-raised);
+  color: var(--text);
+}
+
+.model-option-family {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-left: 6px;
+}
+
+.model-option-lock {
+  margin-left: auto;
+  color: var(--text-faint);
+  opacity: 0.7;
+}
+
+.model-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}

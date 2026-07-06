@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>New Tab</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/widgets.css">
+  <link rel="stylesheet" href="styles/modal.css">
+  <link rel="stylesheet" href="styles/birthday.css">
+</head>
+
+<body>
+
+  <!-- Theme Background Container -->
+  <div id="themeCanvasContainer"></div>
+  <div id="customBgOverlay" style="position:fixed; inset:0; z-index:-1; pointer-events:none; background-size:cover; background-position:center; background-repeat:no-repeat; transition: opacity 0.3s ease; opacity: 0;"></div>
+
+  <main class="wrap">
+
+    <div class="top-right-controls">
+      <a href="https://mail.google.com" class="icon-btn" aria-label="Gmail" title="Gmail"
+        style="text-decoration:none; color:inherit; display:flex; align-items:center; justify-content:center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </a>
+      <button id="themeBtn" class="icon-btn" aria-label="Change Theme" title="Themes">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+          <path d="M2 2l7.586 7.586"></path>
+          <circle cx="11" cy="11" r="2"></circle>
+        </svg>
+      </button>
+      <button id="gameBtn" class="icon-btn" aria-label="Play Games" title="Games">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect>
+          <path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"></path>
+        </svg>
+      </button>
+      <button id="settingsBtn" class="icon-btn" aria-label="Settings" title="Settings">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z">
+          </path>
+        </svg>
+      </button>
+      <button id="testBdayBtn" class="icon-btn" aria-label="Test Birthday" title="Test Birthday" style="font-size: 16px;">
+        🎂
+      </button>
+      <button type="button" class="add-widget-btn" id="addWidgetBtn" aria-haspopup="dialog" title="Add Widget">
+        + Add Widget
+      </button>
+    </div>
+
+    <header class="greeting-heading-row">
+      <p class="greeting-line" id="greetingLine">Good Morning,</p>
+      <div class="heading" id="nameHeading">USER</div>
+    </header>
+
+    <form class="search-box" id="searchForm">
+      <input type="text" id="searchInput" placeholder="Search Google or type a URL" autofocus autocomplete="off">
+      <div class="search-footer">
+        <div class="search-footer-left">
+          <button type="button" class="icon-btn mode-btn" data-mode="private" title="Private Search (Ctrl+1)" aria-label="Private Search">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </button>
+          <a href="https://lens.google.com" class="icon-btn" title="Google Lens" aria-label="Google Lens"
+            style="text-decoration:none; color:inherit; display:flex; align-items:center; justify-content:center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9V6a2 2 0 0 1 2-2h3"></path>
+              <path d="M15 4h3a2 2 0 0 1 2 2v3"></path>
+              <path d="M20 15v3a2 2 0 0 1-2 2h-3"></path>
+              <path d="M9 20H6a2 2 0 0 1-2-2v-3"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              <circle cx="16.5" cy="16.5" r="1.5" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </a>
+          <div class="search-mode-switcher" id="searchModeSwitcher">
+            <button type="button" class="mode-btn" data-mode="ai" title="AI Search (Ctrl+2)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="5" />
+                <line x1="12" y1="19" x2="12" y2="23" />
+                <line x1="1" y1="12" x2="5" y2="12" />
+                <line x1="19" y1="12" x2="23" y2="12" />
+                <line x1="12" y1="9" x2="12" y2="15" />
+                <line x1="9" y1="12" x2="15" y2="12" />
+                <path d="M 15 4.6 A 8 8 0 0 1 19.4 9" />
+                <path d="M 19.4 15 A 8 8 0 0 1 15 19.4" />
+                <path d="M 9 19.4 A 8 8 0 0 1 4.6 15" />
+                <path d="M 4.6 9 A 8 8 0 0 1 9 4.6" />
+              </svg>
+              AI Search
+            </button>
+          </div>
+          <div class="search-model-picker-container" id="modelPickerContainer" style="display: none;">
+            <button type="button" class="model-select-btn" id="modelSelectBtn" title="Select AI Model (Ctrl+Shift+M)">
+              <span class="model-select-icon" id="modelSelectIcon">🤖</span>
+              <span class="model-select-name" id="modelSelectName">ChatGPT</span>
+              <span class="model-select-arrow">▼</span>
+            </button>
+            <div class="model-dropdown" id="modelDropdown" style="display: none;">
+              <!-- Populated dynamically via JS -->
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn" aria-label="Search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5" />
+            <polyline points="5 12 12 5 19 12" />
+          </svg>
+        </button>
+      </div>
+    </form>
+
+  </main>
+
+  <div id="canvas"></div>
+  <div id="modalRoot"></div>
+  <div id="onboardingRoot"></div>
+
+  <script src="vendor/browser-polyfill.min.js"></script>
+  <script type="module" src="src/newtab/index.js"></script>
+</body>
+
+</html>

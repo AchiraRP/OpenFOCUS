@@ -1,0 +1,63 @@
+body.theme-snake_game {
+  background: #1a1a2e;
+}
+
+body.theme-snake_game #themeCanvasContainer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* Widgets get a dark translucent look */
+body.theme-snake_game .widget {
+  background: rgba(26, 26, 46, 0.85);
+  border-color: rgba(106, 191, 75, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.theme-snake_game .widget-header {
+  background: rgba(22, 33, 62, 0.9);
+  color: #6abf4b;
+  border-bottom-color: rgba(106, 191, 75, 0.15);
+}
+
+body.theme-snake_game .search-box {
+  background: rgba(26, 26, 46, 0.85);
+  border-color: rgba(106, 191, 75, 0.2);
+}
+
+body.theme-snake_game .search-box input {
+  background: transparent;
+  color: #e0e0e0;
+}
+
+body.theme-snake_game .search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+body.theme-snake_game .submit-btn {
+  background: #6abf4b;
+  color: #1a1a2e;
+}
+
+body.theme-snake_game .submit-btn:hover {
+  background: #4a8f3b;
+}
+
+body.theme-snake_game .greeting-line,
+body.theme-snake_game .heading {
+  color: #e0e0e0;
+}
+
+body.theme-snake_game .icon-btn,
+body.theme-snake_game .add-widget-btn,
+body.theme-snake_game .mode-pill {
+  color: #6abf4b;
+  border-color: rgba(106, 191, 75, 0.3);
+}
+
+body.theme-snake_game .icon-btn:hover,
+body.theme-snake_game .add-widget-btn:hover,
+body.theme-snake_game .mode-pill:hover {
+  background: rgba(106, 191, 75, 0.1);
+}

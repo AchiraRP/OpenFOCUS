@@ -1,0 +1,8 @@
+body.theme-space_invaders { background: #0a0a1a; }
+body.theme-space_invaders #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-space_invaders .widget { background: rgba(10,10,26,0.85); border-color: rgba(200,100,255,0.2); }
+body.theme-space_invaders .search-box { background: rgba(10,10,26,0.85); border-color: rgba(200,100,255,0.2); }
+body.theme-space_invaders .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-space_invaders .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-space_invaders .greeting-line, body.theme-space_invaders .heading { color: #e0e0e0; }
+body.theme-space_invaders .icon-btn, body.theme-space_invaders .add-widget-btn, body.theme-space_invaders .mode-pill { color: rgba(200,100,255,0.7); border-color: rgba(200,100,255,0.2); }

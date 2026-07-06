@@ -1,0 +1,8 @@
+body.theme-breakout { background: #0a0a1a; }
+body.theme-breakout #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-breakout .widget { background: rgba(10,10,26,0.85); border-color: rgba(230,57,70,0.2); }
+body.theme-breakout .search-box { background: rgba(10,10,26,0.85); border-color: rgba(230,57,70,0.2); }
+body.theme-breakout .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-breakout .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-breakout .greeting-line, body.theme-breakout .heading { color: #e0e0e0; }
+body.theme-breakout .icon-btn, body.theme-breakout .add-widget-btn, body.theme-breakout .mode-pill { color: rgba(230,57,70,0.7); border-color: rgba(230,57,70,0.2); }

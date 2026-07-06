@@ -1,0 +1,8 @@
+body.theme-game_of_life { background: #0a0a1a; }
+body.theme-game_of_life #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-game_of_life .widget { background: rgba(10,10,26,0.85); border-color: rgba(0,255,136,0.2); }
+body.theme-game_of_life .search-box { background: rgba(10,10,26,0.85); border-color: rgba(0,255,136,0.2); }
+body.theme-game_of_life .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-game_of_life .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-game_of_life .greeting-line, body.theme-game_of_life .heading { color: #e0e0e0; }
+body.theme-game_of_life .icon-btn, body.theme-game_of_life .add-widget-btn, body.theme-game_of_life .mode-pill { color: rgba(0,255,136,0.7); border-color: rgba(0,255,136,0.2); }

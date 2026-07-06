@@ -1,0 +1,8 @@
+body.theme-tron { background: #05050f; }
+body.theme-tron #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-tron .widget { background: rgba(5,5,15,0.85); border-color: rgba(0,200,255,0.2); }
+body.theme-tron .search-box { background: rgba(5,5,15,0.85); border-color: rgba(0,200,255,0.2); }
+body.theme-tron .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-tron .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-tron .greeting-line, body.theme-tron .heading { color: #e0e0e0; }
+body.theme-tron .icon-btn, body.theme-tron .add-widget-btn, body.theme-tron .mode-pill { color: rgba(0,200,255,0.7); border-color: rgba(0,200,255,0.2); }

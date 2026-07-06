@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Star Constellations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<svg id="svg" width="100%" height="100vh" >
+    <defs>
+			<linearGradient
+       id="grad"
+       x1="50%"
+       y1="100%"
+       x2="50%"
+       y2="10%">
+        <stop
+          offset="0%"
+          style="stop-color: #1B3347; stop-opacity:1"/>
+      	<stop
+          offset="100%"
+          style="stop-color: #172C3C;stop-opacity:1"/>
+      </linearGradient>
+      <radialGradient id="test">
+        <stop offset="40%" style="stop-color: #fff;"/>
+        <stop offset= "70%" style="stop-color: #23435c;"/>
+    	</radialGradient>
+      <filter
+        id="shadow"
+        width="200"
+        height="200">
+          <feOffset
+            result="offOut"
+            in="SourceGraphic"
+            dx="1"
+            dy="1"/>
+		      <feGaussianBlur
+            result="blurOut"
+            in="offOut"
+            stdDeviation="3"/>
+		      <feBlend
+            in="SourceGraphic"
+            in2="blurOut"
+            mode="normal"/>
+      </filter>
+		</defs>
+		<g
+       transform="translate(20, 80)"
+       id="list">
+			<text class="list-item" id="0">
+        Big Dipper
+      </text>
+			<text
+        y="50" class="list-item" id="1">
+        Ursa Minor
+      </text>
+			<text
+        y="100" class="list-item" id="2">
+        Andromeda
+      </text>
+			<text y="150" class="list-item" id="3">
+        Scorpio
+      </text>
+			<text y="200" class="list-item" id="4" >
+        Draco
+      </text>
+			<text y="250" class="list-item" id="5" >
+        Sagittarius
+      </text>
+			<text id="10" class="list-item"></text>
+		</g>
+	</svg>
+  <script src="script.js"></script>
+</body>
+</html>

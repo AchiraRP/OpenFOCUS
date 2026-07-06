@@ -1,0 +1,8 @@
+body.theme-tetris { background: #0a0a1a; }
+body.theme-tetris #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-tetris .widget { background: rgba(10,10,26,0.85); border-color: rgba(160,0,240,0.2); }
+body.theme-tetris .search-box { background: rgba(10,10,26,0.85); border-color: rgba(160,0,240,0.2); }
+body.theme-tetris .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-tetris .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-tetris .greeting-line, body.theme-tetris .heading { color: #e0e0e0; }
+body.theme-tetris .icon-btn, body.theme-tetris .add-widget-btn, body.theme-tetris .mode-pill { color: rgba(160,0,240,0.7); border-color: rgba(160,0,240,0.2); }

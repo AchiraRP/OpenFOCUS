@@ -1,0 +1,131 @@
+@keyframes rotateOrb {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@font-face {
+  font-family: 'BlockCraft';
+  src: url('../../fonts/block-craft/BlockCraft.otf') format('opentype');
+}
+
+body.theme-hacker_white {
+  background: #000;
+  color: #ffffff;
+}
+
+body.theme-hacker_white #themeCanvasContainer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+body.theme-hacker_white #plw {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+body.theme-hacker_white #plc {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  padding: 2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+body.theme-hacker_white #plc::before,
+body.theme-hacker_white #plc::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 200vmax; height: 200vmax;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: conic-gradient(from 0deg, transparent 0%, transparent 80%, rgba(255, 255, 255, 0.1) 90%, #ffffff 100%);
+  animation: rotateOrb 10s linear infinite;
+}
+
+body.theme-hacker_white #plc::after {
+  animation-delay: -5s;
+}
+
+body.theme-hacker_white #hero-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+body.theme-hacker_white #hero-matrix-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: block;
+}
+
+body.theme-hacker_white .widget {
+  background: rgba(10, 10, 10, 0.85);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.theme-hacker_white .widget-header {
+  background: rgba(20, 20, 20, 0.9);
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+body.theme-hacker_white .search-box {
+  background: rgba(10, 10, 10, 0.85);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.theme-hacker_white .search-box input {
+  background: transparent;
+  color: #ffffff;
+}
+
+body.theme-hacker_white .search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.theme-hacker_white .submit-btn {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.theme-hacker_white .submit-btn:hover {
+  background: #cccccc;
+}
+
+body.theme-hacker_white .greeting-line {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+body.theme-hacker_white .heading {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  font-family: 'BlockCraft', monospace;
+  font-weight: normal;
+}
+
+body.theme-hacker_white .icon-btn,
+body.theme-hacker_white .add-widget-btn,
+body.theme-hacker_white .mode-pill {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+body.theme-hacker_white .icon-btn:hover,
+body.theme-hacker_white .add-widget-btn:hover,
+body.theme-hacker_white .mode-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

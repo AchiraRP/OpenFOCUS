@@ -1,0 +1,39 @@
+body.theme-real_snow {
+}
+
+body.theme-real_snow #themeCanvasContainer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Frosted glass widgets */
+body.theme-real_snow .widget {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-real_snow .widget-header {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+body.theme-real_snow .icon-btn, body.theme-real_snow .add-widget-btn, body.theme-real_snow .mode-pill {
+  color: rgba(200, 230, 255, 0.8);
+  border-color: rgba(200, 230, 255, 0.2);
+}
+body.theme-real_snow .icon-btn:hover, body.theme-real_snow .add-widget-btn:hover, body.theme-real_snow .mode-pill:hover {
+  background: rgba(200, 230, 255, 0.1);
+}
+
+@font-face {
+  font-family: 'OhSnow';
+  src: url('../../fonts/block-craft/oh-snow-font/OhSnowdemo-WyXaE.ttf') format('truetype');
+}
+
+body.theme-real_snow .heading {
+  font-family: 'OhSnow', sans-serif;
+  font-weight: normal;
+  letter-spacing: 2px;
+}

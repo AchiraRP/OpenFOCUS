@@ -1,0 +1,45 @@
+body.theme-snow {
+}
+
+body.theme-snow #themeCanvasContainer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body.theme-snow #snow-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Add frosted glass to widgets in snow theme */
+body.theme-snow .widget {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-snow .widget-header {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+body.theme-snow .icon-btn, body.theme-snow .add-widget-btn, body.theme-snow .mode-pill {
+  color: rgba(200, 230, 255, 0.8);
+  border-color: rgba(200, 230, 255, 0.2);
+}
+body.theme-snow .icon-btn:hover, body.theme-snow .add-widget-btn:hover, body.theme-snow .mode-pill:hover {
+  background: rgba(200, 230, 255, 0.1);
+}
+
+@font-face {
+  font-family: 'OhSnow';
+  src: url('../../fonts/block-craft/oh-snow-font/OhSnowdemo-WyXaE.ttf') format('truetype');
+}
+
+body.theme-snow .heading {
+  font-family: 'OhSnow', sans-serif;
+  font-weight: normal;
+  letter-spacing: 2px;
+}

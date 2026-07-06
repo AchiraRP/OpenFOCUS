@@ -1,0 +1,8 @@
+body.theme-asteroids { background: #0a0a1a; }
+body.theme-asteroids #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-asteroids .widget { background: rgba(10,10,26,0.85); border-color: rgba(100,200,255,0.2); }
+body.theme-asteroids .search-box { background: rgba(10,10,26,0.85); border-color: rgba(100,200,255,0.2); }
+body.theme-asteroids .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-asteroids .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-asteroids .greeting-line, body.theme-asteroids .heading { color: #e0e0e0; }
+body.theme-asteroids .icon-btn, body.theme-asteroids .add-widget-btn, body.theme-asteroids .mode-pill { color: rgba(100,200,255,0.7); border-color: rgba(100,200,255,0.2); }

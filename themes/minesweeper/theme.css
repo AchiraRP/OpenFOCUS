@@ -1,0 +1,8 @@
+body.theme-minesweeper { background: #0a0a1a; }
+body.theme-minesweeper #themeCanvasContainer { position: fixed; inset: 0; z-index: -1; }
+body.theme-minesweeper .widget { background: rgba(10,10,26,0.85); border-color: rgba(100,100,200,0.2); }
+body.theme-minesweeper .search-box { background: rgba(10,10,26,0.85); border-color: rgba(100,100,200,0.2); }
+body.theme-minesweeper .search-box input { background: transparent; color: #e0e0e0; }
+body.theme-minesweeper .search-box input::placeholder { color: rgba(255,255,255,0.4); }
+body.theme-minesweeper .greeting-line, body.theme-minesweeper .heading { color: #e0e0e0; }
+body.theme-minesweeper .icon-btn, body.theme-minesweeper .add-widget-btn, body.theme-minesweeper .mode-pill { color: rgba(100,100,200,0.7); border-color: rgba(100,100,200,0.2); }
